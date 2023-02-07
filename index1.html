@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      form {
+        width: 400px;
+        margin: 50px auto;
+        padding: 30px;
+        background-color: #f2f2f2;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      
+      h2 {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      
+      .form-group {
+        margin-bottom: 20px;
+      }
+      
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      
+      input[type="text"],
+      input[type="password"],
+      input[type="email"],
+      select,
+      input[type="date"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      
+      button[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      .error {
+        color: red;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="regval.php" 
+      name="regform" 
+      onsubmit="return validateForm(this)"
+      method="post">
+      <h2>Student Signup</h2>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <div class="error" id="emailError"></div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <div class="error" id="passwordError"></div>
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword">
+        <div class="error" id="confirmPasswordError"></div>
+      </div>
+      <div class="form-group">
+        <label for="semester">Semester:</label>
+        <select id="semester" name="semester">
+          <option value="">Select Branch</option>
+          <option value="CT">CT</option>
+          <option value="EC">EC</option>
+          <option value="TD">TD</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="branch">Branch:</label>
+        <select id="branch" name="branch">
+          <option value="">Select Sem</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
+      </div>
+      <button type="submit" >Signup</button>
+    </form>
+    
+    <script>
+      function validateForm() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirmPassword").value;
+        var semester = document.getElementById("semester").value;
+        var branch = document.getElementById("branch").value;
+        var dob = document.getElementById("dob").value;
+        var emailError = document.getElementById("emailError");
+        var passwordError = document.getElementById("passwordError");
+        var confirmPasswordError = document.getElementById("confirmPasswordError");
+        var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        var isValid = true;
+        
+        if (!emailRegex.test(email)) {
+          emailError.innerHTML = "Invalid email address";
+          isValid = false;
+        } else {
+          emailError.innerHTML = "";
+        }
+        
+        if (password.length < 8) {
+          passwordError.innerHTML = "Password must be at least 8 characters long";
+          isValid = false;
+        } else {
+          passwordError.innerHTML = "";
+        }
+        
+        if (password !== confirmPassword) {
+          confirmPasswordError.innerHTML = "Passwords do not match";
+          isValid = false;
+        } else {
+          confirmPasswordError.innerHTML = "";
+        }
+        
+        return isValid;
+      }
+    </script>
+  </body>
+</html>
+
+
