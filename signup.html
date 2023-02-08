@@ -78,8 +78,8 @@
         <div class="error" id="confirmPasswordError"></div>
       </div>
       <div class="form-group">
-        <label for="semester">Semester:</label>
-        <select id="semester" name="semester">
+        <label for="branch">Branch:</label>
+        <select id="branch" name="branch">
           <option value="">Select Branch</option>
           <option value="CT">CT</option>
           <option value="EC">EC</option>
@@ -87,8 +87,8 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="branch">Branch:</label>
-        <select id="branch" name="branch">
+        <label for="sem">Sem</label>
+        <select id="sem" name="sem">
           <option value="">Select Sem</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -111,8 +111,8 @@
         var email = document.getElementById("email").value;
         var password = document.getElementById("password").value;
         var confirmPassword = document.getElementById("confirmPassword").value;
-        var semester = document.getElementById("semester").value;
-        var branch = document.getElementById("branch").value;
+	var branch = document.getElementById("branch").value;
+        var sem = document.getElementById("sem").value;
         var dob = document.getElementById("dob").value;
         var emailError = document.getElementById("emailError");
         var passwordError = document.getElementById("passwordError");
@@ -146,5 +146,4 @@
     </script>
   </body>
 </html>
-
 
