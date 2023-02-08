@@ -1,6 +1,6 @@
 <?php
 $servername = "localhost";
-$username = "";
+$username = "root";
 $password = "";
 $dbname = "jagan";
 
@@ -16,13 +16,13 @@ if ($conn->connect_error) {
 $name = $_POST['name'];
 $email = $_POST['email'];
 $password = $_POST['password'];
-$semester = $_POST['semester'];
+$sem = $_POST['sem'];
 $branch = $_POST['branch'];
 $dob = $_POST['dob'];
 
 // Insert into table
-$sql = "INSERT INTO students (username, useremail, password, sem, branch, dob)
-VALUES ('$name', '$email', '$password', '$semester', '$branch', '$dob')";
+$sql = "INSERT INTO students (username, email, password, branch, sem, dob)
+VALUES ('$name', '$email', '$password', '$branch', '$sem', '$dob')";
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
