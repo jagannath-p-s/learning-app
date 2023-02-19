@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+}
+
+.container-fluid{
+    margin-top: 7vh;
+    max-width: 400px;
+}
+.semselect{
+    margin-bottom: 30px;
+}

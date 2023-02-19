@@ -1,149 +1,125 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <style>
-      form {
-        width: 400px;
-        margin: 50px auto;
-        padding: 30px;
-        background-color: #f2f2f2;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-      }
-      
-      h2 {
-        text-align: center;
-        margin-bottom: 40px;
-      }
-      
-      .form-group {
-        margin-bottom: 20px;
-      }
-      
-      label {
-        display: block;
-        margin-bottom: 10px;
-      }
-      
-      input[type="text"],
-      input[type="password"],
-      input[type="email"],
-      select,
-      input[type="date"] {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-      }
-      
-      button[type="submit"] {
-        width: 100%;
-        padding: 10px;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-      
-      .error {
-        color: red;
-        margin-top: 5px;
-      }
-    </style>
-  </head>
-  <body>
-    <form action="regval.php" 
-      name="regform" 
-      onsubmit="return validateForm(this)"
-      method="post">
-      <h2>Student Signup</h2>
-      <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coursedotcom-signup</title>
+    <link rel="stylesheet" href="signup.css">
+<!-- linking bootstrapp -->
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"
+></script>
+</head>
+<body>
+  <div class="container-fluid">
+    <form>
+      <!-- Name input -->
+      <div class="form-outline mb-4">
+        <input type="text" id="form2Example1" class="form-control" />
+        <label class="form-label" for="form2Example1">Name</label>
       </div>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
-        <div class="error" id="emailError"></div>
+      <!-- Email input -->
+      <div class="form-outline mb-4">
+        <input type="email" id="form2Example1" class="form-control" />
+        <label class="form-label" for="form2Example1">Email address</label>
       </div>
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password">
-        <div class="error" id="passwordError"></div>
-      </div>
-      <div class="form-group">
-        <label for="confirmPassword">Confirm Password:</label>
-        <input type="password" id="confirmPassword" name="confirmPassword">
-        <div class="error" id="confirmPasswordError"></div>
-      </div>
-      <div class="form-group">
-        <label for="branch">Branch:</label>
-        <select id="branch" name="branch">
-          <option value="">Select Branch</option>
-          <option value="CT">CT</option>
-          <option value="EC">EC</option>
-          <option value="TD">TD</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="sem">Sem</label>
-        <select id="sem" name="sem">
-          <option value="">Select Sem</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="dob">Date of Birth:</label>
-        <input type="date" id="dob" name="dob">
-      </div>
-      <button type="submit" >Signup</button>
-    </form>
-    
-    <script>
-      function validateForm() {
-        var name = document.getElementById("name").value;
-        var email = document.getElementById("email").value;
-        var password = document.getElementById("password").value;
-        var confirmPassword = document.getElementById("confirmPassword").value;
-	var branch = document.getElementById("branch").value;
-        var sem = document.getElementById("sem").value;
-        var dob = document.getElementById("dob").value;
-        var emailError = document.getElementById("emailError");
-        var passwordError = document.getElementById("passwordError");
-        var confirmPasswordError = document.getElementById("confirmPasswordError");
-        var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-        var isValid = true;
-        
-        if (!emailRegex.test(email)) {
-          emailError.innerHTML = "Invalid email address";
-          isValid = false;
-        } else {
-          emailError.innerHTML = "";
-        }
-        
-        if (password.length < 8) {
-          passwordError.innerHTML = "Password must be at least 8 characters long";
-          isValid = false;
-        } else {
-          passwordError.innerHTML = "";
-        }
-        
-        if (password !== confirmPassword) {
-          confirmPasswordError.innerHTML = "Passwords do not match";
-          isValid = false;
-        } else {
-          confirmPasswordError.innerHTML = "";
-        }
-        
-        return isValid;
-      }
-    </script>
-  </body>
-</html>
+     
+  
+  
 
+  <!-- gender input -->
+  <div class="col-md-6 mb-4">
+
+    <h6 class="mb-2 pb-1">Branch: </h6>
+
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="ct"
+        value="option1" checked />
+      <label class="form-check-label" for="ct">CT</label>
+    </div>
+
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="ec"
+        value="option2" />
+      <label class="form-check-label" for="ec">EC</label>
+    </div>
+
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="td"
+        value="option3" />
+      <label class="form-check-label" for="td">TD</label>
+    </div>
+
+  </div>
+   <!-- sem -->
+  
+     
+   <div class="col-md-6 mb-4">
+    <select class="select">
+      <option value="1">Select Sem</option>
+      <option value="2">Sem 1</option>
+      <option value="3">Sem 2</option>
+      <option value="4">Sem 3</option>
+      <option value="5">Sem 4</option>
+      <option value="6">Sem 5</option>
+      <option value="7">Sem 6</option>
+    </select>
+  </div>
+
+  <!-- Password input -->
+  <div class="form-outline mb-4">
+    <input type="password" id="form2Example2" class="form-control" />
+    <label class="form-label" for="form2Example2">create Password</label>
+  </div>
+  <div class="form-outline mb-4">
+    <input type="password" id="form2Example2" class="form-control" />
+    <label class="form-label" for="form2Example2">Confirm Password</label>
+  </div>
+
+  <!-- 2 column grid layout for inline styling -->
+  <div class="row mb-4">
+    <div class="col d-flex justify-content-center">
+      <!-- Checkbox -->
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+        <label class="form-check-label" for="form2Example31"> Receive Exam Notifications on Mail</label>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Submit button -->
+  <button type="button" class="btn btn-primary btn-block mb-4">Sign Up</button>
+
+  <!-- Register buttons -->
+  <div class="text-center">
+    <p>Already a user? <a href="#!">Sign In </a></p>
+   
+  </div>
+</form>
+
+</div>
+
+
+
+    
+</body>
+</html>
